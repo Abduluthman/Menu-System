@@ -10,7 +10,12 @@ Menu = {
     'Coke-Cola': 9.99,
     'Beef Cheese Sandwich': 15.00, 
     'Grilled Chicken Sandwich': 16.00, 
-    'Egg Salad Sandwich': 18.00
+    'Egg Salad Sandwich': 18.00,
+    'Orange Juice': 6.99,
+    'Fresh Lemonade': 7.50,
+    'French Fries': 4.50,
+    'Calamari': 9.99,
+    'Fish & Chips': 12.00,
 }
 # This is a for loop that loops through the Menu dictionary and prints out every key:value element
 for item in Menu:
@@ -44,12 +49,12 @@ while(userChoice == "YES"):
     # This asks if the user would like to order anything else, if the user inputs yes the loop continues, if no the loop breaks and prints the next line 
     userChoice = input("Would you like to order anything else(YES/NO): ")
 
+#We find the sum of the product of index 1, which is the price of what the user ordered and index 2 which is the quantity of what the user ordered. 
 totalAmount = sum(item[1] * item[2] for item in userOrderList)
-# 
-print("Your total is: ", totalAmount)
 
-#
+
 print("-----Reciept-----") 
-for item in userOrderList:
-    print(f"{item[0]} x{item[2]}: £{item[1] * item[2]:.2f}")
-
+for item in userOrderList: #This is a for loop that goes through items stored in userOrderList, index 0 is what the user ordered, index 1 is the price of the item the user ordered, index 2 is the quantity the user ordered.
+    print(f"{item[0]} x{item[2]}: £{item[1] * item[2]}") #Using output formatter we arrange our outputs to look like that of a menu
+# This prints the total
+print("Your total is: ", totalAmount)
